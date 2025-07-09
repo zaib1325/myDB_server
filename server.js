@@ -1,11 +1,13 @@
-const express = require('express')
-const app = express()
-const port = 3001
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');  // here you tell json-server to use db.json
+const middlewares = jsonServer.defaults();
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const port = process.env.PORT || 3001;
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+server.use(middlewares);
+server.use(router);
+
+server.listen(port, () => {
+    console.log(`JSON Server is running on port ${port}`);
+});
