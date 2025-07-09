@@ -1,15 +1,14 @@
-const express = require('express');
 const jsonServer = require('json-server');
-const app = express();
-const port = process.env.PORT || 3000;
-// Middleware for JSON Server
-const router = jsonServer.router('db.json');
+const path = require('path');
+
+const PORT = process.env.PORT || 3000;
+const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
+
+const app = jsonServer.create();
 app.use(middlewares);
-app.use('/api', router); // Access API at /api/Contacts, etc.
-app.get('/', (req, res) => {
-    res.send('Welcome to My DB Server API. Visit /api/Contacts');
-});
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+app.use(router);
+
+app.listen(PORT, () => {
+  console.log(`JSON Server alone is running on port ${PORT}`);
 });

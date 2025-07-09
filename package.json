@@ -1,34 +1,13 @@
 {
   "name": "mydb_server",
   "version": "1.0.0",
-  "description": "",
+  "description": "JSON Server with Express",
   "main": "server.js",
-  "type": "commonjs",
   "scripts": {
-    "start": "node server.js",
-    "build": "echo \"No build needed for this project\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.18.2",
     "json-server": "^0.17.3"
-  },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zaib1325/myDB_server.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zaib1325/myDB_server/issues"
-  },
-  "homepage": "https://github.com/zaib1325/myDB_server#readme"
+  }
 }
-
-
-
-
-
-
