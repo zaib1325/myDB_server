@@ -1,23 +1,11 @@
-const express = require('express');
-const jsonServer = require('json-server');
-const path = require('path');
+const express = require('express')
+const app = express()
+const port = 3000
 
-const app = express();
-const router = jsonServer.router(path.join(__dirname, 'db.json'));
-const middlewares = jsonServer.defaults();
-
-const PORT = process.env.PORT || 3001;
-
-app.use(middlewares);
-
-// ✅ Health check endpoint BEFORE json-server
 app.get('/', (req, res) => {
-  res.send('JSON Server is running!');
-});
+  res.send('Hello World!')
+})
 
-// ✅ Mount JSON server at /api
-app.use('/api', router);
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server is running on port ${PORT}`);
-});
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
