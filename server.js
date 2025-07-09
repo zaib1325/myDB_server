@@ -10,13 +10,13 @@ const PORT = process.env.PORT || 3001;
 
 app.use(middlewares);
 
-// ✅ Define custom routes *before* the JSON router
+// ✅ Health check endpoint BEFORE json-server
 app.get('/', (req, res) => {
   res.send('JSON Server is running!');
 });
 
-// ✅ Now use the router
-app.use(router);
+// ✅ Mount JSON server at /api
+app.use('/api', router);
 
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
