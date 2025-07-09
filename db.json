@@ -1,0 +1,39 @@
+{
+  "Contacts": [
+    {
+      "name": "shhhhhhhhhhhh",
+      "num": "+923168190473",
+      "email": "zalzla6982@gmail.com",
+      "favourite": true,
+      "id": "7aa7"
+    },
+    {
+      "name": "ahmad",
+      "num": "+9238888888",
+      "email": "zalzla6982@gmail.com",
+      "favourite": false,
+      "id": "a2b7"
+    },
+    {
+      "name": "Shahzaib khanZada",
+      "num": "+923168190000",
+      "email": "zalzla6982@gmail.com",
+      "favourite": false,
+      "id": "8966"
+    },
+    {
+      "id": "b301",
+      "name": "Shahzaib Aslam",
+      "email": "zalza6982@gmail.com",
+      "num": "+923168190473",
+      "favourite": true
+    },
+    {
+      "id": "a8fd",
+      "name": "Shahzaib Aslam",
+      "email": "user@gmail.com",
+      "num": "+923168190473",
+      "favourite": false
+    }
+  ]
+}
