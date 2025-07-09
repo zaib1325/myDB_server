@@ -1,14 +1,17 @@
+const express = require('express');
 const jsonServer = require('json-server');
 const path = require('path');
 
-const PORT = process.env.PORT || 3000;
-const router = jsonServer.router(path.join(__dirname, 'db.json'));
-const middlewares = jsonServer.defaults();
+const app = express();
+const PORT = parseInt(process.env.PORT) || 3000;
 
-const app = jsonServer.create();
-app.use(middlewares);
-app.use(router);
+app.use(jsonServer.defaults());
+app.use('/api', jsonServer.router(path.join(__dirname, 'db.json')));
 
-app.listen(PORT, () => {
-  console.log(`JSON Server alone is running on port ${PORT}`);
+app.get('/', (req, res) => {
+  res.send('✅ Server is live! Visit /api/Contacts');
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 Server is running on port ${PORT}`);
 });
